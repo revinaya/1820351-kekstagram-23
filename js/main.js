@@ -28,13 +28,13 @@ const generateIndexes = (count) => {
 const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT);
 
 const generateRandomUniqueArray = (indexArray) => {
-  var arr = indexArray.map((a) => a + 1);
+  let arr = indexArray.map((value) => value + 1);
   arr.sort(() => getRandomValue(1, 100) - getRandomValue(1, 100));
   return arr;
 };
 
 const IDS = generateRandomUniqueArray(DESCRIPTION_INDEXES);
-const URLS = generateRandomUniqueArray(DESCRIPTION_INDEXES).map((idx) => 'photos/' + idx + '.jpg');
+const URLS = generateRandomUniqueArray(DESCRIPTION_INDEXES).map((idx) => `photos/${idx}.jpg`);
 const COMMENT_IDS = generateRandomUniqueArray(generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT * COMMENTS_COUNT));
 
 const DESCRIPTIONS = [
@@ -73,7 +73,7 @@ const getRandomArrayElement = (elements) => {
 const createComment = (descriptionIdx, commentIdx) => {
   return {
     id: COMMENT_IDS[(descriptionIdx + 1) * (commentIdx + 1) - 1],
-    avatar: "img/avatar-" + getRandomValue(1, 6) + ".svg",
+    avatar: `img/avatar/${getRandomValue(1, 6)}.svg`,
     message: getRandomArrayElement(MESSAGES),
     name: getRandomArrayElement(NAMES),
   };
