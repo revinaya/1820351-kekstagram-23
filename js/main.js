@@ -8,7 +8,7 @@ function getRandomValue(min, max) {
   if (max < min) {
     min = max;
   }
-  return Math.floor(Math.random()*(max - min))+min;
+  return Math.floor(Math.random()*(max-min))+min;
 };
 
 function checkStringLength(str, maxLength) {
@@ -28,13 +28,13 @@ const generateIndexes = (count) => {
 const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT)
 
 const generateRandomUniqueArray = (indexArray) => {
-  arr = indexArray.map((a) => a + 1);
-  arr.sort((a, b) => getRandomValue(1, 100) - getRandomValue(1, 100));
+  arr = indexArray.map((aaa) => aaa + 1);
+  arr.sort((aaa, bbb) => getRandomValue(1, 100) - getRandomValue(1, 100));
   return arr;
 };
 
 const IDS = generateRandomUniqueArray(DESCRIPTION_INDEXES);
-const URLS = generateRandomUniqueArray(DESCRIPTION_INDEXES).map((i) => "photos/" + i + ".jpg");
+const URLS = generateRandomUniqueArray(DESCRIPTION_INDEXES).map((idx) => "photos/" + idx + ".jpg");
 const COMMENT_IDS = generateRandomUniqueArray(generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT * COMMENTS_COUNT));
 
 const DESCRIPTIONS = [
@@ -86,7 +86,7 @@ const createPhotoDescription = (idx) => {
     url: URLS[idx],
     description: getRandomArrayElement(DESCRIPTIONS),
     likes: getRandomValue(15, 200),
-    comments: generateIndexes(COMMENTS_COUNT).map((a) => createComment(idx, a)),
+    comments: generateIndexes(COMMENTS_COUNT).map((aaa) => createComment(idx, aaa)),
   };
 };
 
