@@ -15,6 +15,8 @@ function checkStringLength(str, maxLength) {
   return str.length <= maxLength;
 }
 
+checkStringLength;
+
 const COMMENTS_COUNT = 6;
 const SIMILAR_PHOTO_DESCRIPTION_COUNT = 25;
 
@@ -82,4 +84,4 @@ const createPhotoDescription = (idx) => {
 };
 
 const similarPhotoDescription = DESCRIPTION_INDEXES.map(createPhotoDescription);
-console.log(similarPhotoDescription);
+similarPhotoDescription;
