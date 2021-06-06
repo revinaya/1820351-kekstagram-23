@@ -71,7 +71,7 @@ function createComment(descriptionIdx, commentIdx) {
     message: getRandomArrayElement(MESSAGES),
     name: getRandomArrayElement(NAMES),
   };
-};
+}
 
 function createPhotoDescription(idx) {
   return {
@@ -81,7 +81,7 @@ function createPhotoDescription(idx) {
     likes: getRandomValue(15, 200),
     comments: generateIndexes(COMMENTS_COUNT).map((aaa) => createComment(idx, aaa)),
   };
-};
+}
 
 const similarPhotoDescription = DESCRIPTION_INDEXES.map(createPhotoDescription);
 similarPhotoDescription;
