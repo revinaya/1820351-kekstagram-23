@@ -9,14 +9,14 @@ function getRandomValue(min, max) {
     min = max;
   }
   return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 
-function checkStringLength(str, maxLength) {
+function checkStringLength(str, maxLength) { 
   return str.length <= maxLength;
-}
+};
 
-getRandomValue(1, 10);
-checkStringLength('TYFGHUTDGkjhh', 7);
+console.log (getRandomValue(1, 10));
+console.log(checkStringLength('TYFG', 7));
 
 const COMMENTS_COUNT = 6;
 const SIMILAR_PHOTO_DESCRIPTION_COUNT = 25;
