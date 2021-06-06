@@ -4,11 +4,11 @@ function getRandomValue(min, max) {
   }
   if (max < 0) {
     throw new RangeError('Parametr `max` is out of range');
-  } 
+  }
   if (max < min) {
     min = max;
   }
-  return Math.floor(Math.random()*(max-min))+min;
+  return Math.floor(Math.random() * (max - min)) + min;
 };
 
 function checkStringLength(str, maxLength) {
@@ -72,8 +72,8 @@ const getRandomArrayElement = (elements) => {
 
 const createComment = (descriptionIdx, commentIdx) => {
   return {
-    id: COMMENT_IDS[(descriptionIdx +1) * (commentIdx+1) - 1],
-    avatar: "img/avatar-"+getRandomValue(1, 6)+".svg",
+    id: COMMENT_IDS[(descriptionIdx + 1) * (commentIdx + 1) - 1],
+    avatar: "img/avatar-" + getRandomValue(1, 6) + ".svg",
     message: getRandomArrayElement(MESSAGES),
     name: getRandomArrayElement(NAMES),
   };
