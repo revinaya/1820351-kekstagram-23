@@ -64,7 +64,7 @@ const NAMES = [
 
 const getRandomArrayElement = (elements) => elements[getRandomValue(0, elements.length - 1)];
 
-const createComment = (descriptionIdx, commentIdx) => {
+function createComment(descriptionIdx, commentIdx) {
   return {
     id: COMMENT_IDS[(descriptionIdx + 1) * (commentIdx + 1) - 1],
     avatar: `img/avatar/${getRandomValue(1, 6)}.svg`,
@@ -73,7 +73,7 @@ const createComment = (descriptionIdx, commentIdx) => {
   };
 };
 
-const createPhotoDescription = (idx) => {
+function createPhotoDescription(idx) {
   return {
     id: IDS[idx],
     url: URLS[idx],
