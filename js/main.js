@@ -91,3 +91,4 @@ const createPhotoDescription = (idx) => {
 };
 
 const similarPhotoDescription = DESCRIPTION_INDEXES.map(createPhotoDescription);
+console.log(similarPhotoDescription)
