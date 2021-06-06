@@ -9,21 +9,16 @@ function getRandomValue(min, max) {
     min = max;
   }
   return Math.floor(Math.random() * (max - min)) + min;
-};
+}
 
-function checkStringLength(str, maxLength) { 
+function checkStringLength(str, maxLength) {
   return str.length <= maxLength;
-};
-
-console.log (getRandomValue(1, 10));
-console.log(checkStringLength('TYFG', 7));
+}
 
 const COMMENTS_COUNT = 6;
 const SIMILAR_PHOTO_DESCRIPTION_COUNT = 25;
 
-const generateIndexes = (count) => {
-  return [...Array(count).keys()];
-};
+const generateIndexes = (count) => [...Array(count).keys()];
 
 const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT);
 
@@ -65,10 +60,7 @@ const NAMES = [
   'Фадей',
 ];
 
-
-const getRandomArrayElement = (elements) => {
-  return elements[getRandomValue(0, elements.length - 1)];
-};
+const getRandomArrayElement = (elements) => elements[getRandomValue(0, elements.length - 1)];
 
 const createComment = (descriptionIdx, commentIdx) => {
   return {
@@ -78,7 +70,6 @@ const createComment = (descriptionIdx, commentIdx) => {
     name: getRandomArrayElement(NAMES),
   };
 };
-
 
 const createPhotoDescription = (idx) => {
   return {
