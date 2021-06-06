@@ -9,11 +9,11 @@ function getRandomValue(min, max) {
     min = max;
   }
   return Math.floor(Math.random() * (max - min)) + min;
-};
+}
 
 function checkStringLength(str, maxLength) {
   return str.length <= maxLength;
-};
+}
 
 getRandomValue(1, 10);
 checkStringLength('TYFGHUTDGkjhh', 7);
@@ -25,16 +25,16 @@ const generateIndexes = (count) => {
   return [...Array(count).keys()];
 };
 
-const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT)
+const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT);
 
 const generateRandomUniqueArray = (indexArray) => {
-  arr = indexArray.map((aaa) => aaa + 1);
-  arr.sort((aaa, bbb) => getRandomValue(1, 100) - getRandomValue(1, 100));
+  var arr = indexArray.map((a) => a + 1);
+  arr.sort(() => getRandomValue(1, 100) - getRandomValue(1, 100));
   return arr;
 };
 
 const IDS = generateRandomUniqueArray(DESCRIPTION_INDEXES);
-const URLS = generateRandomUniqueArray(DESCRIPTION_INDEXES).map((idx) => "photos/" + idx + ".jpg");
+const URLS = generateRandomUniqueArray(DESCRIPTION_INDEXES).map((idx) => 'photos/' + idx + '.jpg');
 const COMMENT_IDS = generateRandomUniqueArray(generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT * COMMENTS_COUNT));
 
 const DESCRIPTIONS = [
