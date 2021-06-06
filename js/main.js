@@ -28,7 +28,7 @@ const generateIndexes = (count) => {
 const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT);
 
 const generateRandomUniqueArray = (indexArray) => {
-  let arr = indexArray.map((value) => value + 1);
+  const arr = indexArray.map((value) => value + 1);
   arr.sort(() => getRandomValue(1, 100) - getRandomValue(1, 100));
   return arr;
 };
