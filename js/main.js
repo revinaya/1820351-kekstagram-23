@@ -8,29 +8,29 @@ function getRandomValue(min, max) {
   if (max < min) {
     min = max;
   }
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+  return Math.floor(Math.random()*(max - min))+min;
+};
 
 function checkStringLength(str, maxLength) {
   return str.length <= maxLength;
-}
+};
 
-//getRandomValue(1, 10);
-//checkStringLength('TYFGHUTDGkjhh', 7);
+getRandomValue(1, 10);
+checkStringLength('TYFGHUTDGkjhh', 7);
 
 const COMMENTS_COUNT = 6;
 const SIMILAR_PHOTO_DESCRIPTION_COUNT = 25;
 
 const generateIndexes = (count) => {
-  return [...Array(count).keys()]
+  return [...Array(count).keys()];
 };
 
 const DESCRIPTION_INDEXES = generateIndexes(SIMILAR_PHOTO_DESCRIPTION_COUNT)
 
-const generateRandomUniqueArray = (index_array) => {
-  arr = index_array.map((a) => a + 1);
-  arr.sort((a, b) => getRandomValue(1, 100) - getRandomValue(1, 100))
-  return arr
+const generateRandomUniqueArray = (indexArray) => {
+  arr = indexArray.map((a) => a + 1);
+  arr.sort((a, b) => getRandomValue(1, 100) - getRandomValue(1, 100));
+  return arr;
 };
 
 const IDS = generateRandomUniqueArray(DESCRIPTION_INDEXES);
@@ -70,9 +70,9 @@ const getRandomArrayElement = (elements) => {
   return elements[getRandomValue(0, elements.length - 1)];
 };
 
-const createComment = (description_idx, comment_idx) => {
+const createComment = (descriptionIdx, commentIdx) => {
   return {
-    id: COMMENT_IDS[(description_idx +1) * (comment_idx+1) - 1],
+    id: COMMENT_IDS[(descriptionIdx +1) * (commentIdx+1) - 1],
     avatar: "img/avatar-"+getRandomValue(1, 6)+".svg",
     message: getRandomArrayElement(MESSAGES),
     name: getRandomArrayElement(NAMES),
