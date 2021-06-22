@@ -69,3 +69,4 @@ function createPhotoDescription(idx) {
 const similarPhotoDescription = DESCRIPTION_INDEXES.map(createPhotoDescription);
 similarPhotoDescription;
 
+export {similarPhotoDescription};
